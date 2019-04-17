@@ -8,7 +8,7 @@
 bin/
 out/
 gen/
-.gradle/
+.gradle
 .externalNativeBuild
 /build
 /captures
