@@ -1,4 +1,4 @@
-package com.github.rougsig.twodarray
+package com.github.rougsig.ipk.array
 
 import java.io.InputStream
 import java.io.PrintStream
