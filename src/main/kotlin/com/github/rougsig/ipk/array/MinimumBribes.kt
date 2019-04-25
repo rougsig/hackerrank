@@ -1,23 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import java.io.*
-import java.math.*
-import java.security.*
-import java.text.*
+import java.io.InputStream
+import java.io.PrintStream
 import java.util.*
-import java.util.concurrent.*
-import java.util.function.*
-import java.util.regex.*
-import java.util.stream.*
-import kotlin.collections.*
-import kotlin.comparisons.*
-import kotlin.io.*
-import kotlin.jvm.*
-import kotlin.jvm.functions.*
-import kotlin.jvm.internal.*
-import kotlin.ranges.*
-import kotlin.sequences.*
-import kotlin.text.*
 
 fun minimumBribes(input: InputStream, output: PrintStream) {
   val sc = Scanner(input)
