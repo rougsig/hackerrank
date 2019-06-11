@@ -1,19 +1,16 @@
 package com.github.rougsig.ipk.array
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun arrayManipulation(input: InputStream, output: PrintStream) {
-  val scan = Scanner(input)
-  val n = scan.nextInt()
-  val m = scan.nextInt()
+fun IOEnvironment.arrayManipulation() {
+  val n = sc.nextInt()
+  val m = sc.nextInt()
 
   val arr = LongArray(n)
   for (i in 0 until m) {
-    val lower = scan.nextInt()
-    val upper = scan.nextInt()
-    val sum = scan.nextLong()
+    val lower = sc.nextInt()
+    val upper = sc.nextInt()
+    val sum = sc.nextLong()
     arr[lower - 1] += sum
     if (upper < n) arr[upper] -= sum
   }
@@ -25,5 +22,5 @@ fun arrayManipulation(input: InputStream, output: PrintStream) {
     if (temp > max) max = temp
   }
 
-  output.println(max)
+  out.println(max)
 }

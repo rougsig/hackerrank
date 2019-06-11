@@ -1,9 +1,14 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.FilesTestCase
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentTestFixture
+import org.testng.annotations.DataProvider
 
-class TestRotLeft : FilesTestCase("com.github.rougsig.ipk.array.rotleft") {
-  fun test00() = doTest("00", ::rotLeft)
-  fun test01() = doTest("01", ::rotLeft)
-  fun test10() = doTest("10", ::rotLeft)
+class TestRotLeft : IOEnvironmentTestFixture(IOEnvironment::rotLeft) {
+  @DataProvider
+  fun io() = arrayOf(
+    "00",
+    "01",
+    "10"
+  )
 }

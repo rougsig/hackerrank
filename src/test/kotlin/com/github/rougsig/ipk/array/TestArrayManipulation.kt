@@ -1,10 +1,15 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.FilesTestCase
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentTestFixture
+import org.testng.annotations.DataProvider
 
-class TestArrayManipulation : FilesTestCase("com.github.rougsig.ipk.array.arraymanipulation") {
-  fun test00() = doTest("00", ::arrayManipulation)
-  fun test06() = doTest("06", ::arrayManipulation)
-  fun test14() = doTest("14", ::arrayManipulation)
-  fun test15() = doTest("15", ::arrayManipulation)
+class TestArrayManipulation : IOEnvironmentTestFixture(IOEnvironment::arrayManipulation) {
+  @DataProvider
+  fun io() = arrayOf(
+    "00",
+    "06",
+    "14",
+    "15"
+  )
 }

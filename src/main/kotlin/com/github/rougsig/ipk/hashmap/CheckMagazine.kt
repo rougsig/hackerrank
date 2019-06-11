@@ -1,13 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
-import kotlin.collections.HashMap
+import com.github.rougsig.core.IOEnvironment
 
-fun checkMagazine(input: InputStream, output: PrintStream) {
-  val sc = Scanner(input)
-
+fun IOEnvironment.checkMagazine() {
   val magazine = HashMap<String, Int>()
 
   sc.nextLine()
@@ -25,5 +20,5 @@ fun checkMagazine(input: InputStream, output: PrintStream) {
       magazine[word] ?: 0 >= 0
     }
 
-  output.println(if (isValid) "Yes" else "No")
+  out.println(if (isValid) "Yes" else "No")
 }

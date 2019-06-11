@@ -1,12 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun twoStrings(input: InputStream, output: PrintStream) {
-  val sc = Scanner(input)
-
+fun IOEnvironment.twoStrings() {
   val count = sc.nextLine().toInt()
 
   fun solveString() {
@@ -15,7 +11,7 @@ fun twoStrings(input: InputStream, output: PrintStream) {
 
     val isContains = line1.any { line2.contains(it) }
 
-    output.println(if (isContains) "YES" else "NO")
+    out.println(if (isContains) "YES" else "NO")
   }
 
   (0 until count).forEach { _ -> solveString() }

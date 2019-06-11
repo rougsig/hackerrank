@@ -1,9 +1,14 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.FilesTestCase
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentTestFixture
+import org.testng.annotations.DataProvider
 
-class TestHourglassSum : FilesTestCase("com.github.rougsig.ipk.array.hourglasssum") {
-  fun test00() = doTest("00", ::hourglassSum)
-  fun test01() = doTest("01", ::hourglassSum)
-  fun test08() = doTest("08", ::hourglassSum)
+class TestHourglassSum : IOEnvironmentTestFixture(IOEnvironment::hourglassSum) {
+  @DataProvider
+  fun io() = arrayOf(
+    "00",
+    "01",
+    "08"
+  )
 }

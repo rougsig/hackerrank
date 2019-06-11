@@ -1,12 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun minimumSwaps(input: InputStream, output: PrintStream) {
-  val sc = Scanner(input)
-
+fun IOEnvironment.minimumSwaps() {
   val arr = IntArray(sc.nextInt()) { sc.nextInt() }
 
   var swapCount = 0
@@ -36,5 +32,5 @@ fun minimumSwaps(input: InputStream, output: PrintStream) {
     if (!isSwapped) break
   }
 
-  output.println(swapCount)
+  out.println(swapCount)
 }

@@ -1,13 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun minimumBribes(input: InputStream, output: PrintStream) {
-  val sc = Scanner(input)
-
-
+fun IOEnvironment.minimumBribes() {
   fun solveQueue() {
     val length = sc.nextInt()
     val peopleQueue = IntArray(length) { sc.nextInt() }
@@ -17,7 +12,7 @@ fun minimumBribes(input: InputStream, output: PrintStream) {
     peopleQueue.forEachIndexed { index, peopleNumber ->
 
       if (peopleNumber - (index + 1) > 2) {
-        output.println("Too chaotic")
+        out.println("Too chaotic")
         return
       }
 
@@ -28,7 +23,7 @@ fun minimumBribes(input: InputStream, output: PrintStream) {
       }
     }
 
-    output.println(swapCount)
+    out.println(swapCount)
   }
 
   val queueCount = sc.nextInt()

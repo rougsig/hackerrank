@@ -1,18 +1,12 @@
 package com.github.rougsig.ipk.array
 
-import java.io.InputStream
-import java.io.PrintStream
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun hourglassSum(input: InputStream, output: PrintStream) {
-  val sc = Scanner(input)
-
+fun IOEnvironment.hourglassSum() {
   val arr = Array(6) { IntArray(6) { sc.nextInt() } }
 
-  val one2Four = (1..4)
-
-  val result = one2Four
-    .flatMap { i -> one2Four.map { j -> i to j } }
+  val result = (1..4)
+    .flatMap { i -> (1..4).map { j -> i to j } }
     .map { (x, y) ->
       arr[x][y] +
         arr[x - 1][y] +
@@ -24,5 +18,5 @@ fun hourglassSum(input: InputStream, output: PrintStream) {
     }
     .max()
 
-  output.print(result)
+  out.print(result)
 }

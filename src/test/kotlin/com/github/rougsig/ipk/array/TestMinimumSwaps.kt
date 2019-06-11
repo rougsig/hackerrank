@@ -1,9 +1,14 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.FilesTestCase
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentTestFixture
+import org.testng.annotations.DataProvider
 
-class TestMinimumSwaps : FilesTestCase("com.github.rougsig.ipk.array.minimumswaps") {
-  fun test00() = doTest("00", ::minimumSwaps)
-  fun test01() = doTest("01", ::minimumSwaps)
-  fun test02() = doTest("02", ::minimumSwaps)
+class TestMinimumSwaps : IOEnvironmentTestFixture(IOEnvironment::minimumSwaps) {
+  @DataProvider
+  fun io() = arrayOf(
+    "00",
+    "01",
+    "02"
+  )
 }
