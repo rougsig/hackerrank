@@ -9,6 +9,7 @@ class TestSherlockAndAnagrams : IOEnvironmentTestFixture(IOEnvironment::sherlock
   fun io() = arrayOf(
     "00",
     "01",
+    "02",
     "06"
   )
 }
