@@ -9,6 +9,8 @@ class TestFreqQuery : IOEnvironmentTestFixture(IOEnvironment::freqQuery) {
   fun io() = arrayOf(
     "00",
     "01",
+    "08",
+    "12",
     "14"
   )
 }

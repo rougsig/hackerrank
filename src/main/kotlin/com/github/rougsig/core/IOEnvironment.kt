@@ -1,14 +1,16 @@
 package com.github.rougsig.core
 
-import java.io.InputStream
-import java.io.OutputStream
-import java.io.PrintStream
+import java.io.*
 import java.util.*
 
 class IOEnvironment(
-  input: InputStream,
-  output: OutputStream
+  private val input: InputStream,
+  private val output: OutputStream
 ) {
-  val out = PrintStream(output)
-  val sc = Scanner(input)
+  val out by lazy(LazyThreadSafetyMode.NONE) { PrintStream(output) }
+  val rd by lazy(LazyThreadSafetyMode.NONE) { BufferedReader(InputStreamReader(input)) }
+  val sc by lazy(LazyThreadSafetyMode.NONE) { Scanner(input) }
+  val sb by lazy(LazyThreadSafetyMode.NONE) { LinkedList<String>() }
+
+  fun printResult() = output.write(sb.joinToString("\n").toByteArray())
 }
