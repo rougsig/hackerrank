@@ -24,8 +24,8 @@ abstract class IOEnvironmentTestFixture(private val testFun: IOEnvironment.() ->
     IOEnvironment(ByteArrayInputStream(input.toByteArray()), PrintStream(baos))
       .testFun()
 
-    assertThat(baos.toString().trimIndent())
-      .isEqualTo(output.trimIndent())
+    assertThat(baos.toString().trim().trimIndent())
+      .isEqualTo(output.trim().trimIndent())
   }
 
   private fun readIOFiles(fileName: String): Array<String> {
