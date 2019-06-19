@@ -15,9 +15,15 @@ class IOEnvironment(
   val rd by lazy(LazyThreadSafetyMode.NONE) { BufferedReader(InputStreamReader(input)) }
   val sb by lazy(LazyThreadSafetyMode.NONE) { LinkedList<String>() }
 
-  lateinit var tokens: StringTokenizer
-  fun nextTokens() {
-    tokens = StringTokenizer(rd.readLine())
+  private var tokens: StringTokenizer? = null
+  fun nextToken(): String {
+    if (tokens == null) tokens = StringTokenizer(rd.readLine())
+    return if (tokens!!.hasMoreTokens()) {
+      tokens!!.nextToken()
+    } else {
+      tokens = StringTokenizer(rd.readLine())
+      tokens!!.nextToken()
+    }
   }
 
   fun addToResult(str: String) = sb.add(str)
