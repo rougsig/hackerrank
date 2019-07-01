@@ -9,6 +9,8 @@ class TestIsValid : IOEnvironmentTestFixture(IOEnvironment::isValid) {
   fun io() = arrayOf(
     "00",
     "01",
+    "03",
+    "16",
     "18"
   )
 }

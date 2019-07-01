@@ -1,7 +1,11 @@
 package com.github.rougsig.core
 
 import java.io.*
+import java.lang.StringBuilder
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import kotlin.collections.LinkedHashMap
 
 class IOEnvironment(
   private val input: InputStream,
