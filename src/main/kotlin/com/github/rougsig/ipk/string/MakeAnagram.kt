@@ -1,6 +1,5 @@
 package com.github.rougsig.ipk.string
 
-
 import com.github.rougsig.core.IOEnvironment
 import kotlin.math.abs
 
