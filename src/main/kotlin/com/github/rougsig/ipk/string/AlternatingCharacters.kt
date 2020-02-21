@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.alternatingCharacters() {
+fun IOEnvironmentOld.alternatingCharacters() {
   repeat(nextToken().toInt()) {
     val str = nextToken().toMutableList()
     val iterator = str.iterator()

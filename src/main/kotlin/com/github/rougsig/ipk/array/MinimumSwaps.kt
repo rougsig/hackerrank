@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.minimumSwaps() {
+fun IOEnvironmentOld.minimumSwaps() {
   val arr = IntArray(sc.nextInt()) { sc.nextInt() }
 
   var swapCount = 0

@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import java.util.*
 
-fun IOEnvironment.activityNotifications() {
+fun IOEnvironmentOld.activityNotifications() {
   val n = nextToken().toInt()
   val d = nextToken().toInt()
   val pastTransactions = IntArray(201)

@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import kotlin.math.abs
 
-fun IOEnvironment.makeAnagram() {
+fun IOEnvironmentOld.makeAnagram() {
   val s1 = nextToken()
   val s2 = nextToken()
 

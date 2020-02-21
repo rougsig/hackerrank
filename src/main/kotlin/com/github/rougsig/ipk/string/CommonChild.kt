@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import kotlin.math.max
 
-fun IOEnvironment.commonChild() {
+fun IOEnvironmentOld.commonChild() {
   val s1 = nextToken()
   val s2 = nextToken()
 

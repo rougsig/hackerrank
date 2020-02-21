@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.sherlockAndAnagrams() {
+fun IOEnvironmentOld.sherlockAndAnagrams() {
   val n = sc.nextLine().toInt()
 
   fun solve() {

@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import java.util.*
 
-fun IOEnvironment.maximumToys() {
+fun IOEnvironmentOld.maximumToys() {
   var tokens = StringTokenizer(rd.readLine())
 
   val n = tokens.nextToken().toInt()

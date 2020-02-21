@@ -1,10 +1,10 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironment
-import com.github.rougsig.core.IOEnvironmentTestFixture
+import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironmentOldTestFixture
 import org.testng.annotations.DataProvider
 
-class TestHourglassSum : IOEnvironmentTestFixture(IOEnvironment::hourglassSum) {
+class TestHourglassSum : IOEnvironmentOldTestFixture(IOEnvironmentOld::hourglassSum) {
   @DataProvider
   fun io() = arrayOf(
     "00",

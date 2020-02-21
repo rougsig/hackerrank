@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import kotlin.math.min
 
-fun IOEnvironment.substrCount() {
+fun IOEnvironmentOld.substrCount() {
   data class Pair(val c: Char, var cc: Int)
 
   val l = nextToken().toInt()

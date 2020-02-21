@@ -1,12 +1,12 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 import kotlin.math.max
 
-fun IOEnvironment.freqQuery() {
+fun IOEnvironmentOld.freqQuery() {
   val m1 = HashMap<Int, Int>()
   val m2 = HashMap<Int, HashSet<Int>>()
 

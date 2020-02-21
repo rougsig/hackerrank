@@ -1,23 +1,17 @@
 package com.github.rougsig.core
 
-import java.io.*
-import java.lang.StringBuilder
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.io.OutputStream
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
-import kotlin.collections.LinkedHashMap
 
 class IOEnvironment(
   private val input: InputStream,
   private val output: OutputStream
 ) {
-  @Deprecated("use sb with printResult. sb faster")
-  val out by lazy(LazyThreadSafetyMode.NONE) { PrintStream(output) }
-  @Deprecated("use rd with StringTokenizer. rd faster")
-  val sc by lazy(LazyThreadSafetyMode.NONE) { Scanner(input) }
-
-  val rd by lazy(LazyThreadSafetyMode.NONE) { BufferedReader(InputStreamReader(input)) }
-  val sb by lazy(LazyThreadSafetyMode.NONE) { LinkedList<String>() }
+  val rd = BufferedReader(InputStreamReader(input))
+  val sb = LinkedList<String>()
 
   private var tokens: StringTokenizer? = null
   fun nextToken(): String {
@@ -31,6 +25,5 @@ class IOEnvironment(
   }
 
   fun addToResult(str: String) = sb.add(str)
-
   fun printResult() = output.write(sb.joinToString("\n").toByteArray())
 }

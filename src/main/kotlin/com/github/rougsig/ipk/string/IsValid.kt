@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.isValid() {
+fun IOEnvironmentOld.isValid() {
   val s = nextToken()
 
   val charsCount = IntArray(26)

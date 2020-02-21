@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.rotLeft() {
+fun IOEnvironmentOld.rotLeft() {
   val length = sc.nextInt()
   val leftBy = sc.nextInt()
 

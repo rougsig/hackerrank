@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.twoStrings() {
+fun IOEnvironmentOld.twoStrings() {
   val count = sc.nextLine().toInt()
 
   fun solveString() {

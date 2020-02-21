@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.countTriplets() {
+fun IOEnvironmentOld.countTriplets() {
   val n = sc.nextInt()
   val r = sc.nextInt()
   val arr = IntArray(n) { sc.nextInt() }

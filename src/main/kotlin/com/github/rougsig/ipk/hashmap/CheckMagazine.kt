@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.checkMagazine() {
+fun IOEnvironmentOld.checkMagazine() {
   val magazine = HashMap<String, Int>()
 
   sc.nextLine()

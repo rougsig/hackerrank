@@ -1,10 +1,10 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironment
-import com.github.rougsig.core.IOEnvironmentTestFixture
+import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironmentOldTestFixture
 import org.testng.annotations.DataProvider
 
-class TestCheckMagazine : IOEnvironmentTestFixture(IOEnvironment::checkMagazine) {
+class TestCheckMagazine : IOEnvironmentOldTestFixture(IOEnvironmentOld::checkMagazine) {
   @DataProvider
   fun io() = arrayOf(
     "00",

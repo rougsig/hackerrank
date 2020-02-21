@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.minimumBribes() {
+fun IOEnvironmentOld.minimumBribes() {
   fun solveQueue() {
     val length = sc.nextInt()
     val peopleQueue = IntArray(length) { sc.nextInt() }

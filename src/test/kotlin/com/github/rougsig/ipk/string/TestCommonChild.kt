@@ -1,10 +1,10 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironment
-import com.github.rougsig.core.IOEnvironmentTestFixture
+import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironmentOldTestFixture
 import org.testng.annotations.DataProvider
 
-class TestCommonChild : IOEnvironmentTestFixture(IOEnvironment::commonChild) {
+class TestCommonChild : IOEnvironmentOldTestFixture(IOEnvironmentOld::commonChild) {
   @DataProvider
   fun io() = arrayOf(
     "02",

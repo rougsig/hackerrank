@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 import java.util.*
 
-fun IOEnvironment.countSwaps() {
+fun IOEnvironmentOld.countSwaps() {
   var swapCounter = 0
 
   val n = rd.readLine().toInt()

@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOEnvironmentOld
 
-fun IOEnvironment.arrayManipulation() {
+fun IOEnvironmentOld.arrayManipulation() {
   val n = sc.nextInt()
   val m = sc.nextInt()
 
