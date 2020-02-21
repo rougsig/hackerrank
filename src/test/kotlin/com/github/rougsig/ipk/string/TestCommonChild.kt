@@ -7,9 +7,10 @@ import org.testng.annotations.DataProvider
 class TestCommonChild : IOEnvironmentTestFixture(IOEnvironment::commonChild) {
   @DataProvider
   fun io() = arrayOf(
-//    "02",
-    "06"
-//    "07",
-//    "14"
+    "02",
+    "05",
+    "06",
+    "07",
+    "14"
   )
 }

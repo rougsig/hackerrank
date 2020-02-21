@@ -1,25 +1,28 @@
 package com.github.rougsig.ipk.string
 
 import com.github.rougsig.core.IOEnvironment
+import kotlin.math.max
 
 fun IOEnvironment.commonChild() {
   val s1 = nextToken()
   val s2 = nextToken()
 
-  val a = Array(s1.length + 1) { Array(s2.length + 1) { 0 } }
-  (0..s1.lastIndex).forEach { i ->
-    (0..s2.lastIndex).forEach { j ->
-      if (s1[i] == s2[j]) {
-        a[i + 1][j + 1] = a[i][j] + 1
+  var a1 = Array(s1.length + 1) { 0 }
+  var a2 = Array(s2.length + 1) { 0 }
+
+  for (i in 1 until (s1.length + 1)) {
+    for (j in 1 until (s2.length + 1)) {
+      if (s1[i - 1] == s2[j - 1]) {
+        a2[j] = a1[j - 1] + 1
       } else {
-        a[i + 1][j + 1] = if (a[i + 1][j] > a[i][j + 1]) a[i + 1][j] else a[i][j + 1]
+        a2[j] = max(a2[j - 1], a1[j])
       }
     }
+    val t = a1
+    a1 = a2
+    a2 = t
   }
 
-  addToResult(a.last().last().toString())
+  addToResult(a1.last().toString())
   printResult()
 }
-
-// HARRY
-// SALLY
