@@ -7,9 +7,10 @@ import org.testng.annotations.DataProvider
 class TestSubstrCount : IOEnvironmentTestFixture(IOEnvironment::substrCount) {
   @DataProvider
   fun io() = arrayOf(
-//    "00",
-//    "01",
-    "15"
-//    "16"
+    "00",
+    "01",
+    "02",
+    "15",
+    "16"
   )
 }
