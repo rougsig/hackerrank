@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
   kotlin("jvm") version "1.3.70"
 }
@@ -11,6 +13,12 @@ dependencies {
 
   testImplementation("org.testng:testng:6.10")
   testImplementation("org.assertj:assertj-core:3.6.2")
+}
+
+tasks.withType<KotlinCompile> {
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
 }
 
 tasks.named<Test>("test") {
