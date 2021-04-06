@@ -1,13 +1,13 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 import kotlin.math.min
 
-fun IOEnvironmentOld.substrCount() {
+fun IOEnvironment.substrCount() {
   data class Pair(val c: Char, var cc: Int)
 
-  val l = nextToken().toInt()
-  val s = nextToken()
+  val l = nextInt()
+  val s = nextString()
   val a = arrayOfNulls<Pair>(l + 2)
   var counter = 0
 
@@ -46,6 +46,6 @@ fun IOEnvironmentOld.substrCount() {
     i += 1
   }
 
-  addToResult(counter.toString())
-  printResult()
+  println(counter)
+  flush()
 }

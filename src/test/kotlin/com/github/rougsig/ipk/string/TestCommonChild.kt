@@ -1,16 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestCommonChild : IOEnvironmentOldTestFixture(IOEnvironmentOld::commonChild) {
-  @DataProvider
-  fun io() = arrayOf(
-    "02",
-    "05",
-    "06",
-    "07",
-    "14"
-  )
-}
+class TestCommonChild : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/string/commonChild",
+  testFun = IOEnvironment::commonChild
+)

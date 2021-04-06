@@ -1,16 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestSubstrCount : IOEnvironmentOldTestFixture(IOEnvironmentOld::substrCount) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "01",
-    "02",
-    "15",
-    "16"
-  )
-}
+class TestSubstrCount : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/string/substrCount",
+  testFun = IOEnvironment::substrCount
+)

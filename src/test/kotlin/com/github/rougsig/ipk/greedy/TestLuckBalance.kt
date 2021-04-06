@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.greedy
 
 import com.github.rougsig.core.IOEnvironment
-import com.github.rougsig.core.IOEnvironmentTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOSpec
 
-class TestLuckBalance : IOEnvironmentTestFixture(IOEnvironment::luckBalance) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "03",
-    "12"  
-  )
-}
+class TestLuckBalance : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/greedy/luckBalance",
+  testFun = IOEnvironment::luckBalance
+)

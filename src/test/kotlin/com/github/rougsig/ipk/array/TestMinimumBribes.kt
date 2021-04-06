@@ -1,15 +1,9 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestMinimumBribes : IOEnvironmentOldTestFixture(IOEnvironmentOld::minimumBribes) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "01",
-    "03",
-    "11"
-  )
-}
+class TestMinimumBribes : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/array/minimumBribes",
+  testFun = IOEnvironment::minimumBribes
+)

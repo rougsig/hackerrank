@@ -1,17 +1,16 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 import java.util.*
-import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 import kotlin.math.max
 
-fun IOEnvironmentOld.freqQuery() {
+fun IOEnvironment.freqQuery() {
   val m1 = HashMap<Int, Int>()
   val m2 = HashMap<Int, HashSet<Int>>()
 
   var isFirstLine = false
-  rd.forEachLine { line ->
+  forEachLine { line ->
     if (!isFirstLine) isFirstLine = true
     else {
       val tokens = StringTokenizer(line)
@@ -42,14 +41,14 @@ fun IOEnvironmentOld.freqQuery() {
         }
         3 -> {
           if (!m2[v].isNullOrEmpty()) {
-            sb.add("1")
+           println("1")
           } else {
-            sb.add("0")
+           println("0")
           }
         }
       }
     }
   }
 
-  printResult()
+  flush()
 }

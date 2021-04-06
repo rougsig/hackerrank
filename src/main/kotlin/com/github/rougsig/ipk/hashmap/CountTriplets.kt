@@ -1,11 +1,11 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.countTriplets() {
-  val n = sc.nextInt()
-  val r = sc.nextInt()
-  val arr = IntArray(n) { sc.nextInt() }
+fun IOEnvironment.countTriplets() {
+  val n = nextInt()
+  val r = nextInt()
+  val arr = IntArray(n) { nextInt() }
 
   val m1 = HashMap<Int, Long>()
   val m2 = HashMap<Int, Long>()
@@ -17,5 +17,7 @@ fun IOEnvironmentOld.countTriplets() {
     if (k in m1) m2.compute(i) { _, v -> (v ?: 0) + m1.getValue(k) }
     m1.compute(i) { _, v -> (v ?: 0) + 1 }
   }
-  out.println(triplets)
+
+  println(triplets)
+  flush()
 }

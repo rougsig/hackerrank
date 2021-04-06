@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.minimumSwaps() {
-  val arr = IntArray(sc.nextInt()) { sc.nextInt() }
+fun IOEnvironment.minimumSwaps() {
+  val arr = IntArray(nextInt()) { nextInt() }
 
   var swapCount = 0
 
@@ -20,7 +20,7 @@ fun IOEnvironmentOld.minimumSwaps() {
   while (true) {
     var isSwapped = false
 
-    (0 until arr.size).forEach { index ->
+    (arr.indices).forEach { index ->
       if (index + 1 != arr[index]) {
         isSwapped = true
         swapCount++
@@ -32,5 +32,6 @@ fun IOEnvironmentOld.minimumSwaps() {
     if (!isSwapped) break
   }
 
-  out.println(swapCount)
+  println(swapCount)
+  flush()
 }

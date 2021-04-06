@@ -1,12 +1,12 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.sherlockAndAnagrams() {
-  val n = sc.nextLine().toInt()
+fun IOEnvironment.sherlockAndAnagrams() {
+  val n = nextInt()
 
   fun solve() {
-    val str = sc.nextLine()
+    val str = nextLine()
 
     val toCheck = mutableListOf<IntArray>()
     (0..str.lastIndex).forEach { i ->
@@ -27,8 +27,10 @@ fun IOEnvironmentOld.sherlockAndAnagrams() {
         if (toCheck[i].contentEquals(toCheck[j]) && i != j) count += 1
       }
     }
-    out.println(count)
+    println(count)
   }
 
   (0 until n).forEach { _ -> solve() }
+
+  flush()
 }

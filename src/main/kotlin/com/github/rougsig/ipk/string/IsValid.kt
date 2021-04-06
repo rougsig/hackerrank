@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.isValid() {
-  val s = nextToken()
+fun IOEnvironment.isValid() {
+  val s = nextString()
 
   val charsCount = IntArray(26)
 
@@ -34,6 +34,6 @@ fun IOEnvironmentOld.isValid() {
     }
   }
 
-  addToResult(if (isValid) "YES" else "NO")
-  printResult()
+  println(if (isValid) "YES" else "NO")
+  flush()
 }

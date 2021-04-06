@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestCountSwaps : IOEnvironmentOldTestFixture(IOEnvironmentOld::countSwaps) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "01",
-    "03"
-  )
-}
+class TestCountSwaps : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/sorting/countSwaps",
+  testFun = IOEnvironment::countSwaps
+)

@@ -1,24 +1,25 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.checkMagazine() {
+fun IOEnvironment.checkMagazine() {
   val magazine = HashMap<String, Int>()
 
-  sc.nextLine()
+  nextLine()
 
-  sc.nextLine()
+  nextLine()
     .split(" ")
     .forEach { word ->
       magazine[word] = (magazine[word] ?: 0) + 1
     }
 
-  val isValid = sc.nextLine()
+  val isValid = nextLine()
     .split(" ")
     .all { word ->
       magazine[word] = (magazine[word] ?: 0) - 1
       magazine[word] ?: 0 >= 0
     }
 
-  out.println(if (isValid) "Yes" else "No")
+  println(if (isValid) "Yes" else "No")
+  flush()
 }

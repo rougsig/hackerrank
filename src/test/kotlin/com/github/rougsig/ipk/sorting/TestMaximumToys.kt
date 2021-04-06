@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestMaximumToys : IOEnvironmentOldTestFixture(IOEnvironmentOld::maximumToys) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "16",
-    "17"
-  )
-}
+class TestMaximumToys : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/sorting/maximumToys",
+  testFun = IOEnvironment::maximumToys
+)

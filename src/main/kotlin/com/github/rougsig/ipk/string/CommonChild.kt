@@ -1,11 +1,11 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 import kotlin.math.max
 
-fun IOEnvironmentOld.commonChild() {
-  val s1 = nextToken()
-  val s2 = nextToken()
+fun IOEnvironment.commonChild() {
+  val s1 = nextString()
+  val s2 = nextString()
 
   var a1 = Array(s1.length + 1) { 0 }
   var a2 = Array(s2.length + 1) { 0 }
@@ -23,6 +23,6 @@ fun IOEnvironmentOld.commonChild() {
     a2 = t
   }
 
-  addToResult(a1.last().toString())
-  printResult()
+  println(a1.last())
+  flush()
 }

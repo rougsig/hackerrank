@@ -7,14 +7,17 @@ import java.io.OutputStream
 import java.util.*
 
 class IOEnvironment(
-  private val input: InputStream,
+  input: InputStream,
   private val output: OutputStream
 ) {
-  val rd = BufferedReader(InputStreamReader(input))
-  val sb = LinkedList<String>()
+  private val rd = BufferedReader(InputStreamReader(input))
+  private val sb = LinkedList<String>()
 
   private var tokens: StringTokenizer? = null
-  fun nextToken(): String {
+
+  fun forEachLine(action: (String) -> Unit) = rd.forEachLine(action)
+  fun nextLine() = rd.readLine()
+  fun nextString(): String {
     if (tokens == null) tokens = StringTokenizer(rd.readLine())
     return if (tokens!!.hasMoreTokens()) {
       tokens!!.nextToken()
@@ -24,6 +27,10 @@ class IOEnvironment(
     }
   }
 
-  fun addToResult(str: String) = sb.add(str)
-  fun printResult() = output.write(sb.joinToString("\n").toByteArray())
+  fun nextInt() = nextString().toInt()
+  fun nextLong() = nextString().toLong()
+
+  fun println(str: Any?) = sb.add("$str\n")
+  fun print(str: Any?) = sb.add(str.toString())
+  fun flush() = output.write(sb.joinToString("").toByteArray())
 }

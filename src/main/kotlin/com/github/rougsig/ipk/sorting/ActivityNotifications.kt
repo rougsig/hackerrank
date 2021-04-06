@@ -1,32 +1,33 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 import java.util.*
 
-fun IOEnvironmentOld.activityNotifications() {
-  val n = nextToken().toInt()
-  val d = nextToken().toInt()
+fun IOEnvironment.activityNotifications() {
+  val n = nextInt()
+  val d = nextInt()
   val pastTransactions = IntArray(201)
 
   val q = LinkedList<Int>()
 
   repeat(d) {
-    val t = nextToken().toInt()
+    val t = nextInt()
     pastTransactions[t] += 1
     q.add(t)
   }
 
   var notificationCounter = 0
   repeat(n - d) {
-    val t = nextToken().toInt()
+    val t = nextInt()
     if (t >= 2 * calculateMedian(pastTransactions, d)) notificationCounter += 1
     q.add(t)
     val l = q.poll()
     pastTransactions[t] += 1
     pastTransactions[l] -= 1
   }
-  addToResult("$notificationCounter")
-  printResult()
+
+  println(notificationCounter)
+  flush()
 }
 
 fun calculateMedian(array: IntArray, d: Int): Float {

@@ -1,10 +1,10 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.alternatingCharacters() {
-  repeat(nextToken().toInt()) {
-    val str = nextToken().toMutableList()
+fun IOEnvironment.alternatingCharacters() {
+  repeat(nextInt()) {
+    val str = nextString().toMutableList()
     val iterator = str.iterator()
     var removeCount = 0
 
@@ -18,8 +18,8 @@ fun IOEnvironmentOld.alternatingCharacters() {
       }
     }
 
-    addToResult("$removeCount")
+    println(removeCount)
   }
 
-  printResult()
+  flush()
 }

@@ -1,16 +1,16 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.arrayManipulation() {
-  val n = sc.nextInt()
-  val m = sc.nextInt()
+fun IOEnvironment.arrayManipulation() {
+  val n = nextInt()
+  val m = nextInt()
 
   val arr = LongArray(n)
   for (i in 0 until m) {
-    val lower = sc.nextInt()
-    val upper = sc.nextInt()
-    val sum = sc.nextLong()
+    val lower = nextInt()
+    val upper = nextInt()
+    val sum = nextLong()
     arr[lower - 1] += sum
     if (upper < n) arr[upper] -= sum
   }
@@ -22,5 +22,6 @@ fun IOEnvironmentOld.arrayManipulation() {
     if (temp > max) max = temp
   }
 
-  out.println(max)
+  println(max)
+  flush()
 }

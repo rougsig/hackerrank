@@ -1,16 +1,9 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestFreqQuery : IOEnvironmentOldTestFixture(IOEnvironmentOld::freqQuery) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "01",
-    "08",
-    "12",
-    "14"
-  )
-}
+class TestFreqQuery : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/hashmap/freqQuery",
+  testFun = IOEnvironment::freqQuery
+)

@@ -1,15 +1,9 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestArrayManipulation : IOEnvironmentOldTestFixture(IOEnvironmentOld::arrayManipulation) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "06",
-    "14",
-    "15"
-  )
-}
+class TestArrayManipulation : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/array/arrayManipulation",
+  testFun = IOEnvironment::arrayManipulation
+)

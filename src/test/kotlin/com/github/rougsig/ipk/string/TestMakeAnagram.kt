@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.string
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestMakeAnagram : IOEnvironmentOldTestFixture(IOEnvironmentOld::makeAnagram) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "01",
-    "15"
-  )
-}
+class TestMakeAnagram : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/string/makeAnagram",
+  testFun = IOEnvironment::makeAnagram
+)

@@ -1,9 +1,9 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.hourglassSum() {
-  val arr = Array(6) { IntArray(6) { sc.nextInt() } }
+fun IOEnvironment.hourglassSum() {
+  val arr = Array(6) { IntArray(6) { nextInt() } }
 
   val result = (1..4)
     .flatMap { i -> (1..4).map { j -> i to j } }
@@ -18,5 +18,6 @@ fun IOEnvironmentOld.hourglassSum() {
     }
     .max()
 
-  out.print(result)
+  println(result)
+  flush()
 }

@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestCheckMagazine : IOEnvironmentOldTestFixture(IOEnvironmentOld::checkMagazine) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "20",
-    "21"
-  )
-}
+class TestCheckMagazine : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/hashmap/checkMagazine",
+  testFun = IOEnvironment::checkMagazine
+)

@@ -1,8 +1,8 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.countInversions() {
+fun IOEnvironment.countInversions() {
 
   fun mergeSort(arr: IntArray): Long {
     var counter = 0L
@@ -53,6 +53,6 @@ fun IOEnvironmentOld.countInversions() {
   }
 
 
-  repeat(nextToken().toInt()) { addToResult(mergeSort(IntArray(nextToken().toInt()) { nextToken().toInt() }).toString()) }
-  printResult()
+  repeat(nextInt()) { println(mergeSort(IntArray(nextInt()) { nextInt() }).toString()) }
+  flush()
 }

@@ -1,17 +1,12 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
-import java.util.*
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.maximumToys() {
-  var tokens = StringTokenizer(rd.readLine())
+fun IOEnvironment.maximumToys() {
+  val n = nextInt()
+  var amount = nextInt()
 
-  val n = tokens.nextToken().toInt()
-  var amount = tokens.nextToken().toInt()
-
-  tokens = StringTokenizer(rd.readLine())
-
-  val arr = IntArray(n) { tokens.nextToken().toInt() }
+  val arr = IntArray(n) { nextInt() }
   arr.sort()
 
   var counter = 0
@@ -24,6 +19,6 @@ fun IOEnvironmentOld.maximumToys() {
     }
   }
 
-  sb.add("$counter")
-  printResult()
+  println("$counter")
+  flush()
 }

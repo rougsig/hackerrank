@@ -1,18 +1,18 @@
 package com.github.rougsig.ipk.array
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 
-fun IOEnvironmentOld.minimumBribes() {
+fun IOEnvironment.minimumBribes() {
   fun solveQueue() {
-    val length = sc.nextInt()
-    val peopleQueue = IntArray(length) { sc.nextInt() }
+    val length = nextInt()
+    val peopleQueue = IntArray(length) { nextInt() }
 
     var swapCount = 0
 
     peopleQueue.forEachIndexed { index, peopleNumber ->
 
       if (peopleNumber - (index + 1) > 2) {
-        out.println("Too chaotic")
+        println("Too chaotic")
         return
       }
 
@@ -23,9 +23,11 @@ fun IOEnvironmentOld.minimumBribes() {
       }
     }
 
-    out.println(swapCount)
+    println(swapCount)
   }
 
-  val queueCount = sc.nextInt()
+  val queueCount = nextInt()
   (0 until queueCount).forEach { _ -> solveQueue() }
+
+  flush()
 }

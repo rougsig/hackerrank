@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.hashmap
 
-import com.github.rougsig.core.IOEnvironmentOld
-import com.github.rougsig.core.IOEnvironmentOldTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOEnvironment
+import com.github.rougsig.core.IOSpec
 
-class TestTwoStrings : IOEnvironmentOldTestFixture(IOEnvironmentOld::twoStrings) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "06",
-    "07"
-  )
-}
+class TestTwoStrings : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/hashmap/twoStrings",
+  testFun = IOEnvironment::twoStrings
+)

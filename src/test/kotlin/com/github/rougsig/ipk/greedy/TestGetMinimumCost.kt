@@ -1,14 +1,9 @@
 package com.github.rougsig.ipk.greedy
 
 import com.github.rougsig.core.IOEnvironment
-import com.github.rougsig.core.IOEnvironmentTestFixture
-import org.testng.annotations.DataProvider
+import com.github.rougsig.core.IOSpec
 
-class TestGetMinimumCost : IOEnvironmentTestFixture(IOEnvironment::getMinimumCost) {
-  @DataProvider
-  fun io() = arrayOf(
-    "00",
-    "10",
-    "11"
-  )
-}
+class TestGetMinimumCost : IOSpec(
+  resourcesDir = "com/github/rougsig/ipk/greedy/getMinimumCost",
+  testFun = IOEnvironment::getMinimumCost
+)

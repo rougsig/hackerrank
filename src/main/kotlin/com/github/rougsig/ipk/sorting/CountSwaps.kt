@@ -1,13 +1,13 @@
 package com.github.rougsig.ipk.sorting
 
-import com.github.rougsig.core.IOEnvironmentOld
+import com.github.rougsig.core.IOEnvironment
 import java.util.*
 
-fun IOEnvironmentOld.countSwaps() {
+fun IOEnvironment.countSwaps() {
   var swapCounter = 0
 
-  val n = rd.readLine().toInt()
-  val tokens = StringTokenizer(rd.readLine())
+  val n = nextInt()
+  val tokens = StringTokenizer(nextLine())
   val arr = IntArray(n) { tokens.nextToken().toInt() }
 
   (0..arr.lastIndex).forEach { i ->
@@ -22,9 +22,9 @@ fun IOEnvironmentOld.countSwaps() {
     }
   }
 
-  sb.add("Array is sorted in $swapCounter swaps.")
-  sb.add("First Element: ${arr.first()}")
-  sb.add("Last Element: ${arr.last()}")
+  println("Array is sorted in $swapCounter swaps.")
+  println("First Element: ${arr.first()}")
+  println("Last Element: ${arr.last()}")
 
-  printResult()
+  flush()
 }
